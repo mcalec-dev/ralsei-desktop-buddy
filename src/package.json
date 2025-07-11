@@ -1,0 +1,19 @@
+{
+  "name": "ralsei-desktop-buddy",
+  "author": "McAlec",
+  "license": "MIT",
+  "version": "0.0.1",
+  "description": "A cute Ralsei desktop buddy.",
+  "main": "index.html",
+  "nodejs": true,
+  "window": {
+    "transparent": true,
+    "resizeable": false,
+    "frame": false,
+    "always_on_top": true,
+    "height": 80,
+    "width": 35,
+    "title": "Ralsei Desktop Buddy",
+    "icon": "assets/sprite/idle/0.png"
+  }
+}

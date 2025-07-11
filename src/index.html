@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      -webkit-app-region: drag;
+      background-color: red;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    #ralsei {
+      -webkit-app-region: drag;
+      background-color: blue;
+      width: auto;
+      height: 100%;
+      position: absolute;
+      pointer-events: none;
+      image-rendering: pixelated;
+    }
+  </style>
+  <script>
+    var gui = require('nw.gui');
+    var win = gui.Window.get();
+    win.setResizable(false);
+    win.setShowInTaskbar(false);
+    win.setFrame(false);
+  </script>
+</head>
+<body>
+  <div>
+    <img id="ralsei" />
+  </div>
+  <script defer type="module" src="renderer.js"></script>
+</body>
+</html>

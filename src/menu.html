@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Context Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    #menu {
+      width: 200px;
+      border: 1px solid black;
+      background-color: white;
+      position: absolute;
+      z-index: 1000;
+    }
+    .menu-item {
+      padding: 8px 12px;
+      border-bottom: 1px solid #eee;
+    }
+    .menu-item:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
+  <script>
+    var gui = require('nw.gui');
+    var win = gui.Window.get();
+    win.setResizable(false);
+    win.setShowInTaskbar(false);
+    win.setFrame(false);
+  </script>
+</head>
+<body>
+  <div id="menu">
+    <div class="menu-item">Option 1</div>
+    <div class="menu-item">Option 2</div>
+    <div class="menu-item">Option 3</div>
+  </div>
+  <script>
+    const gui = require('nw.gui');
+    const win = gui.Window.get();
+
+    // Close the menu when clicking outside
+    document.addEventListener('click', (event) => {
+      const menu = document.getElementById('menu');
+      if (!menu.contains(event.target)) {
+        menu.style.display = 'none';
+      }
+    });
+
+    // Show the menu at the clicked position
+    win.on('contextmenu', (event) => {
+      event.preventDefault();
+      const menu = document.getElementById('menu');
+      menu.style.left = `${event.x}px`;
+      menu.style.top = `${event.y}px`;
+      menu.style.display = 'block';
+    });
+    // Hide the menu on window close
+    win.on('close', () => {
+      const menu = document.getElementById('menu');
+      menu.style.display = 'none';
+      win.close(true);
+    });
+  </script>
+</body>
+</html>

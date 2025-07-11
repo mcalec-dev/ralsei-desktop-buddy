@@ -1,0 +1,17 @@
+{
+  "name": "ralsei-desktop-buddy",
+  "author": "McAlec",
+  "license": "MIT",
+  "version": "0.0.1",
+  "description": "A cute Ralsei desktop buddy.",
+  "main": "index.html",
+  "nodejs": true,
+  "scripts": {
+    "start": "npx nw ./src",
+    "build": "nwbuild --platform win64 ./src/*"
+  },
+  "devDependencies": {
+    "nw": "^0.101.2",
+    "nw-builder": "^4.13.16"
+  }
+}
