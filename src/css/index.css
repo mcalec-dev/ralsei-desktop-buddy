@@ -1,0 +1,24 @@
+body {
+  -webkit-app-region: drag;
+  background: transparent;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  user-select: none;
+}
+body.debug {
+  background: red;
+}
+#ralsei {
+  -webkit-app-region: drag;
+  background: transparent;
+  width: auto;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  image-rendering: pixelated;
+}
+#ralsei.debug {
+  background: blue;
+}

@@ -2,13 +2,14 @@
   "name": "ralsei-desktop-buddy",
   "author": "McAlec",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "A cute Ralsei desktop buddy.",
-  "main": "index.html",
+  "main": "src/index.html",
   "nodejs": true,
   "scripts": {
-    "start": "npx nw ./src",
-    "build": "nwbuild --platform win64 ./src/*"
+    "start": "nw ./src",
+    "build:win": "nwbuild --platform win --arch x64 --glob=false --cacheDir=%temp%/win-x64 --outDir ./dist/win ./src",
+    "build:linux": "nwbuild --platform linux --arch x64 --glob=false --cacheDir=%temp%/linux-x64 --outDir ./dist/linux ./src"
   },
   "devDependencies": {
     "nw": "^0.101.2",

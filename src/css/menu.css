@@ -1,0 +1,42 @@
+@import url('../assets/font/determination.css');
+body {
+  background: transparent;
+  width: 100%;
+  font-family: 'Determination', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  user-select: none;
+}
+body.debug {
+  background: red;
+}
+span {
+  color: #fff;
+  text-align: left;
+}
+#menu {
+  background: black;
+  width: 100%;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  z-index: 1000;
+}
+.menu-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+}
+.menu-item:first-child {
+  border: 3px solid #eee;
+}
+.menu-item:not(:last-child, :first-child) {
+  border-left: 3px solid #eee;
+  border-right: 3px solid #eee;
+}
+.menu-item:last-child {
+  border: 3px solid #eee;
+}
